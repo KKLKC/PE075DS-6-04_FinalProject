@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>十人十木 - 付款</title>
+	<link rel="icon" type="image/x-icon" href="image/logo4.png">
+	<style type="text/css">
+		/*
+		 * demo styles
+		 */
+
+		@media screen and (min-width: 981px){
+		  
+			html{
+				font-size: 62.5%;
+			}
+		}
+
+		@media screen and (min-width: 481px) and (max-width: 980px){
+		  
+			html{
+				font-size: 9px;
+			}
+		}
+
+		@media screen and (max-width: 480px){
+		  
+			html{
+				font-size: 8px;
+			}
+		}
+
+		body{
+		    background: radial-gradient(rgb(253, 253, 253), rgb(248, 248, 248));
+		  	font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Open Sans", "Helvetica Neue", "Segoe UI", sans-serif;
+			font-size: 1.6rem;
+			margin: 0;
+		}
+
+		.demo{
+			min-height: 470px;
+		  box-sizing: border-box;
+		  position: relative;
+
+		  padding-left: 1rem;
+		  padding-right: 1rem;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		a{
+		  color: #000;
+		}
+
+		a:focus{
+			outline: 2px solid #fdde60;
+		}
+
+		a:hover{
+		    text-decoration: none;
+		}
+
+		/*
+		 * CSS payment card
+		 */
+
+		.payment-card{
+			width: 60rem;
+		}
+
+		.payment-card__footer{
+			text-align: center;
+			margin-top: 20rem;
+		}
+
+		.bank-card{
+			position: relative;
+		}
+
+		@media screen and (min-width: 481px){
+
+		    .bank-card{
+		    	height: 30rem;
+		    }
+
+		    .bank-card__side{
+		    	border-radius: 10px;
+		    	border: 1px solid transparent;
+				  position: absolute;
+				  width: 65%;
+		    }
+
+		    .bank-card__side_front{
+		    	background-color: #f0f0ee;
+		    	padding: 5%;
+		    	box-shadow: 0 0 10px #f4f4f2;
+		    	border-color: #a29e97;
+
+		    	top: 20%;
+		    	left: 0;
+		    	z-index: 3;
+		    }
+
+		    .bank-card__side_back{
+		    	background-color: #e0ddd7;
+		    	padding: 40% 5% 11%;
+		    	box-shadow: 0 0 2rem #f3f3f3;
+
+		    	text-align: right;
+		    	border-color: #dad9d6;
+
+				  top: 40%;
+		    	right: 0;
+		    }
+
+		    .bank-card__side_back:before{
+		    	content: "";
+		    	width: 100%;
+		    	height: 25%;
+		    	background-color: #8e8b85;
+
+		    	position: absolute;
+		    	top: 14%;
+		    	right: 0;
+		    }
+		}
+
+		@media screen and (max-width: 480px){
+
+		    .bank-card__side{
+		        border: 1px solid #a29e97;
+		        background-color: #f0f0ee;
+		        padding-left: 5%;
+		        padding-right: 5%;
+		    }
+
+		    .bank-card__side_front{
+		        border-radius: 10px 10px 0 0;
+		        border-bottom: none;
+		        padding-top: 5%;
+		    }
+
+		    .bank-card__side_back{
+		        border-radius: 0 0 10px 10px;
+		        border-top: none;
+		        padding-bottom: 5%;
+		    }
+		}
+
+		.bank-card__inner{
+			margin-bottom: 4%;
+		}
+
+		.bank-card__inner:last-child{
+			margin-bottom: 0;
+		}
+
+		.bank-card__label{
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.bank-card__label_holder, .bank-card__label_number{
+			width: 100%;
+		}
+
+		@media screen and (min-width: 481px){
+
+		    .bank-card__month, .bank-card__year{
+		        width: 25%;
+		    }
+		}
+
+		@media screen and (max-width: 480px){
+
+		    .bank-card__month, .bank-card__year{
+		        width: 48%;
+		    }
+		}
+
+		@media screen and (min-width: 481px){
+
+		    .bank-card__cvc{
+		        width: 25%;
+		    }
+		}
+
+		@media screen and (max-width: 480px){
+
+		    .bank-card__cvc{
+		        width: 100%;
+		        margin-top: 4%;
+		    }
+		}
+
+		.bank-card__caption{
+			text-transform: uppercase;
+			font-size: 1.1rem;
+		  margin-left: 1%;
+		}
+
+		.bank-card__field{
+			box-sizing: border-box;
+			border: 3px solid #d0d0ce;
+			width: 100%;
+
+			padding: 1rem;
+			font-family: inherit;
+			font-size: 100%;
+		}
+
+		.bank-card__field:focus{
+			outline: none;
+			border-color: #fdde60;
+		}
+
+		.bank-card__separator{
+			font-size: 3.2rem;
+			color: #c4c4c3;
+
+			margin-left: 3%;
+			margin-right: 3%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		@media screen and (max-width: 480px){
+
+		    .bank-card__separator{
+		        display: none;
+		    }
+		}
+
+		@media screen and (max-width: 480px){
+
+		    .bank-card__footer{
+		        display: flex;
+		        justify-content: space-between;
+		    }
+		}
+
+		.payment-card__button{
+
+			background-color: #ada093;
+			transition: background-color .4s ease-out;
+
+			border-radius: 5px;
+			border: 3px solid transparent;
+			cursor: pointer;
+			padding: 1rem 6.5rem;
+
+			font-size: 100%;
+			font-family: inherit;
+			color: #fff;
+		}
+
+		.payment-card__button:focus{
+			outline: none;
+			border-color: #fdde60;
+		}
+
+		.payment-card__button:hover, .payment-card__button:focus{
+			background-color: #8e8b85;
+		}
+
+		.card_icon {
+			display: flex;
+			justify-content: right;
+		}
+
+		.card_icon img {
+			width: 50px;
+			margin: 0 5px;
+		}
+
+		.cvc {
+			display: flex;
+			justify-content: left;
+		}
+
+		.security {
+			position: absolute;
+			bottom: 15px;
+			right: 0;
+			display: flex;
+		}
+
+		.security img {
+			width: 100px;
+			margin: 0 10px;
+		}
+
+		.declaration {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+		<div class="demo">
+		<form class="payment-card" action="acknowledgement.html" method="post">
+			<div class="bank-card">
+				<div class="bank-card__side bank-card__side_front">
+					<div class="bank-card__inner">
+						<label class="bank-card__label bank-card__label_holder">
+
+							<div>Holder of card</div>
+							<input type="text" class="bank-card__field" placeholder="John Doe" pattern="[A-Za-z, ]{2,}" name="holder-card" required>
+						</label>
+					</div>
+					<div class="bank-card__inner">
+						<label class="bank-card__label bank-card__label_number">
+							<div>Number of card</div>
+							<input type="text" class="bank-card__field" placeholder="1111222233334444" pattern="[0-9]{16}" name="number-card" required>
+						</label>
+					</div>
+					<div class="bank-card__inner">
+						<span class="bank-card__caption">valid thru</span>
+					</div>
+					<div class="bank-card__inner bank-card__footer">
+						<label class="bank-card__label bank-card__month">
+							<div>Month</div>
+							<input type="text" class="bank-card__field" placeholder="MM" maxlength="2" pattern="[0-9]{2}" name="mm-card" required>
+						</label>
+						<span class="bank-card__separator">/</span>
+						<label class="bank-card__label bank-card__year">
+							<div>Year</div>
+							<input type="text" class="bank-card__field" placeholder="YY" maxlength="2" pattern="[0-9]{2}" name="year-card" required>
+						</label>
+						<div class="card_icon">
+							<img src="image/visa.png">
+							<img src="image/mastercard.png">
+						</div>
+					</div>
+				</div>
+				<div class="bank-card__side bank-card__side_back">
+					<div class="bank-card__inner">
+						<label class="bank-card__label bank-card__cvc">
+							<div class="cvc">CVC</div>
+							<input type="text" class="bank-card__field" placeholder="123" maxlength="3" pattern="[0-9]{3}" name="cvc-card" required>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="payment-card__footer">
+				<button class="payment-card__button">Pay</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="security">
+		<img src="image/visa_verified.png">
+		<img src="image/mastercard_secure_code.svg">
+	</div>
+
+	<div class="declaration">
+		<div>All transactions are secured and encrypted.</div>
+	</div>
+</body>
+</html>

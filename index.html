@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="十人十木, 茶, tea">
+  <meta name="description" content="Tea Online Shop">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>十人十木 - 主頁</title>
+  <link rel="icon" type="image/x-icon" href="image/logo4.png">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/navigation_bar.css">
+  <link rel="stylesheet" href="style/login.css">
+
+  <style type="text/css">
+    /*animation*/
+    .box {
+      height: 450px;
+      position: relative;
+    }
+
+    .animation-element {
+      position: relative;
+    }
+
+    .bounce-up .box {
+      opacity: 0;
+      transition: all 1500ms ease-out;
+      -moz-transform: translate3d(0px, 200px, 0px);
+      -webkit-transform: translate3d(0px, 200px, 0px);
+      -o-transform: translate(0px, 200px);
+      -ms-transform: translate(0px, 200px);
+      transform: translate3d(0px, 200px, 0px);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .bounce-up.in-view .box {
+      opacity: 1;
+      -moz-transform: translate3d(0px, 0px, 0px);
+      -webkit-transform: translate3d(0px, 0px, 0px);
+      -o-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+      transform: translate3d(0px, 0px, 0px);
+    }
+
+    .tea-type {
+      margin: 100px 0px;
+      text-align: center;
+    }
+
+    .category {
+      transition: transform 0.3s;
+    }
+
+    .category:hover {
+      transform: scale(1.1, 1.1);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: rotateY(180deg);
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    .box:hover .overlay {
+      opacity: 1;
+    }
+
+    .best-item {
+      transition: 0.3s;
+    }
+
+    .box:hover .best-item {
+      transform: rotateY(180deg);
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .box:hover .text {
+      opacity: 0.8;
+    }
+
+    .best-product {
+      text-align: center;
+    }
+
+    .homepage {
+      display: grid;
+      grid-template-columns: 45% 45%;
+      justify-content: space-around;
+      height: 550px;
+    }
+
+    .homepage img {
+      height: 500px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      clip-path: inset(0px 0px);
+      z-index: 1;
+      border-radius: 0;
+    }
+
+    .homepage img:hover {
+      transform: scale(1.2);
+      z-index: 1;
+      clip-path: inset(42.5px 42.5px);
+    }
+
+    .homepage2 {
+      display: grid;
+      grid-template-columns: 20% 70%;
+      justify-content: space-around;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    .homepage2 button {
+      font-size: 14px;
+    }
+
+    .new-items {
+      text-align: center;
+      margin-top: 100px;
+      position: relative;
+    }
+
+    #test9 {
+      width: 50%;
+      border-bottom: 3px solid black;
+      position: absolute;
+      top: 80px;
+      right: 20px;
+    }
+
+    #test10 {
+      width: 50%;
+      border-bottom: 3px solid black;
+      position: absolute;
+      top: 180px;
+      right: 20px;
+    }
+
+    #test11 {
+      width: 50%;
+      border-bottom: 3px solid black;
+      position: absolute;
+      top: 270px;
+      right: 20px;
+    }
+
+    #test12 {
+      width: 50%;
+      border-bottom: 3px solid black;
+      position: absolute;
+      top: 370px;
+      right: 20px;
+    }
+
+    @media screen and (max-width: 992px) {
+      .homepage {
+        grid-template-columns: 60% 30%;
+        height: 800px;
+      }
+
+      .homepage img {
+        height: 450px;
+        width: 100%;
+      }
+
+      .homepage2 {
+        grid-template-columns: 90%;
+        margin-bottom: 0;
+      }
+
+      #test9 {
+        width: 30%;
+      }
+
+      #test10 {
+        width: 30%;
+        top: 170px;
+      }
+
+      #test11 {
+        width: 30%;
+        top: 260px;
+      }
+
+      #test12 {
+        width: 30%;
+        top: 350px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="logo">
+      <a href="#"><img src="image/logo.png"></a>
+    </div>
+    <div id="mainListDiv" class="main_list">
+      <ul class="navlinks">
+        <li>
+          <div class="dropdown">
+            <a href="product.html">商品 <div class="triangle-down"></div></a>
+            <div class="dropdown-content">
+              <a href="product.html#red-tea">紅茶</a>
+              <a href="product.html#green-tea">綠茶</a>
+              <a href="product.html#oolong-tea">烏龍茶</a>
+              <a href="product.html#flowering-tea">花茶</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+        <li>
+          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img
+              src="image/login_icon.png"> 建立帳戶</button>
+
+          <div id="id01" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                  title="Close Modal">&times;</span>
+                <img src="image/logo4.png" class="avatar">
+              </div>
+
+              <div>建立帳戶</div><br>
+              <div>請輸入以下資料</div>
+              <hr>
+              <label for="email"><b>用戶名稱</b></label><br>
+              <input type="text" placeholder="你可以使用中英文字母和數字" name="email" required><br>
+
+              <label for="psw"><b>密碼</b></label><br>
+              <input type="password" placeholder="請混合使用 8 個字元以上的英文字母、數字和符號" name="psw" required><br>
+
+              <label for="psw-repeat"><b>重覆密碼</b></label><br>
+              <input type="password" placeholder="重覆密碼" name="psw-repeat" required><br>
+
+              <label>
+                <input type="checkbox" checked="checked" name="remember">保持登入
+              </label><br><br>
+
+              <div>按一下「繼續」即表示你同意<a href="#" style="color:dodgerblue">服務條款</a>並確認<a href="#"
+                  style="color:dodgerblue">私隱政策</a>.</div>
+
+              <button type="submit">繼續</button><br><br>
+
+              <div class="forgot" ;>
+                <div class="psw">已擁有帳戶?<a href="#" style="color:dodgerblue">登入</a></div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img
+              src="image/login_icon2.png"> 登入</button>
+
+          <div id="id02" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                  title="Close Modal">&times;</span>
+                <img src="image/logo4.png" class="avatar">
+              </div>
+              <div>登入</div>
+              <hr>
+
+              <label for="uname"><b>用戶名稱</b></label><br>
+              <input type="text" placeholder="輸入用戶名稱" name="uname" required><br>
+
+              <label for="psw"><b>密碼</b></label><br>
+              <input type="password" placeholder="輸入密碼" name="psw" required><br>
+
+
+              <input type="checkbox" checked="checked" name="remember"><label for="remember">保持登入</label><br><br>
+
+              <button type="submit">登入</button><br><br>
+
+              <div class="forgot">
+                <div class="psw"><a href="#" style="color:dodgerblue">忘記用戶名稱？</a></div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">購物車 <img
+              src="image/shopping_bag_icon.png"><span class="total-count"></span></button>
+        </li>
+      </ul>
+    </div>
+    <span class="navTrigger">
+      <i></i>
+      <i></i>
+      <i></i>
+    </span>
+  </nav>
+
+  <section class="home">
+    <div class="slogan">一茶一會</div>
+    <div class="slogan6">十人十木</div>
+  </section>
+
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg animate" role="document">
+      <div class="modal-content modal-content1">
+        <div class="modal-header">
+          <div class="modal-title" id="exampleModalLabel">商品清單</div>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>總共金額: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button class="clear-cart btn btn-danger">清空</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <a href="reciept.html"><button type="button" class="btn btn-primary">前往付款</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="new-items">
+    <h1>新商品</h1>
+    <div class="homepage animation-element bounce-up">
+      <div class="box">
+        <img src="image/red_tea3.jpg" id="test1">
+        <img src="image/green_tea.jpg" id="test2">
+        <img src="image/oolong_tea3.jpg" id="test3">
+        <img src="image/flowering_tea3.jpg" id="test4">
+      </div>
+      <div>
+        <div class="homepage2" onmouseover="myFunction()">
+          <div>紅茶</div>
+          <div>
+            <div>大吉嶺紅茶</div>
+            <br>
+            <div id="test5">
+              <div>$99</div>
+              <br>
+              <a href="#" data-name="大吉嶺紅茶" data-price="99" class="add-to-cart btn btn-primary"><button>加入購物車</button></a>
+              <br><br>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="homepage2" onmouseover="myFunction2()">
+          <div>綠茶</div>
+          <div>
+            <div>玉露</div>
+            <br>
+            <div id="test6">
+              <div>$99</div>
+              <br>
+              <a href="#" data-name="玉露" data-price="99" class="add-to-cart btn btn-primary"><button>加入購物車</button></a>
+              <br><br>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="homepage2" onmouseover="myFunction3()">
+          <div>烏龍茶</div>
+          <div>
+            <div>高山烏龍茶</div>
+            <br>
+            <div id="test7">
+              <div>$99</div>
+              <br>
+              <a href="#" data-name="高山烏龍茶" data-price="99" class="add-to-cart btn btn-primary"><button>加入購物車</button></a>
+              <br><br>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="homepage2" onmouseover="myFunction4()">
+          <div>花茶</div>
+          <div>
+            <div>洛神花茶</div>
+            <br>
+            <div id="test8">
+              <div>$99</div>
+              <br>
+              <a href="#" data-name="薰衣草花茶" data-price="99" class="add-to-cart btn btn-primary"><button>加入購物車</button></a>
+              <br><br>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="test9"></div>
+    <div id="test10"></div>
+    <div id="test11"></div>
+    <div id="test12"></div>
+  </div>
+
+  <div class="tea-type">
+    <h1>茶類</h1>
+    <div class="grid-container">
+      <div class="category animation-element bounce-up">
+        <div class="box">
+          <a href="product.html#red-tea">
+            <img src="image/red_tea.jpg">
+            <div>紅茶</div>
+          </a>
+        </div>
+      </div>
+      <div class="category animation-element bounce-up">
+        <div class="box">
+          <a href="product.html#green-tea">
+            <img src="image/green_tea.jpg">
+            <div>綠茶</div>
+          </a>
+        </div>
+      </div>
+      <div class="category animation-element bounce-up">
+        <div class="box">
+          <a href="product.html#oolong-tea">
+            <img src="image/oolong_tea.jpg">
+            <div>烏龍茶</div>
+          </a>
+        </div>
+      </div>
+      <div class="category animation-element bounce-up">
+        <div class="box">
+          <a href="product.html#flowering-tea">
+            <img src="image/flowering_tea.jpg">
+            <div>花茶</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="best-product">
+    <h1>熱賣商品</h1>
+    <div class="grid-container">
+      <div class="animation-element bounce-up">
+        <div class="box">
+          <div class="best-item">
+            <img src="image/red_tea2.jpg">
+            <div class="overlay">
+              <img src="image/red_tea5.jpg">
+              <a href="#" data-name="台茶18號" data-price="99"
+                class="add-to-cart text btn btn-primary"><button>加入購物車</button></a>
+            </div>
+          </div>
+          <div>台茶18號</div>
+          <div>$99</div>
+          <a href="detail.html"><button>查看詳情</button></a>
+        </div>
+      </div>
+      <div class="animation-element bounce-up">
+        <div class="box">
+          <div class="best-item">
+            <img src="image/green_tea2.jpg">
+            <div class="overlay">
+              <img src="image/green_tea5.jpg">
+              <a href="#" data-name="宇治抹茶" data-price="99"
+                class="add-to-cart text btn btn-primary"><button>加入購物車</button></a>
+            </div>
+          </div>
+          <div>宇治抹茶</div>
+          <div>$99</div>
+          <a href="detail.html"><button>查看詳情</button></a>
+        </div>
+      </div>
+      <div class="animation-element bounce-up">
+        <div class="box">
+          <div class="best-item">
+            <img src="image/oolong_tea2.jpg">
+            <div class="overlay">
+              <img src="image/oolong_tea5.jpg">
+              <a href="#" data-name="翠玉烏龍茶" data-price="99"
+                class="add-to-cart text btn btn-primary"><button>加入購物車</button></a>
+            </div>
+          </div>
+          <div>翠玉烏龍茶</div>
+          <div>$99</div>
+          <a href="detail.html"><button>查看詳情</button></a>
+        </div>
+      </div>
+      <div class="animation-element bounce-up">
+        <div class="box">
+          <div class="best-item">
+            <img src="image/flowering_tea2.jpg">
+            <div class="overlay">
+              <img src="image/flowering_tea5.jpg">
+              <a href="#" data-name="玫瑰花茶" data-price="99"
+                class="add-to-cart text btn btn-primary"><button>加入購物車</button></a>
+            </div>
+          </div>
+          <div>玫瑰花茶</div>
+          <div>$99</div>
+          <a href="detail.html"><button>查看詳情</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/85212345678?text=我哋喺十人十木，請問有咩可以幫到你？" target="_blank"><img src="image/whatsapp.webp"
+      class="whatsapp"></a>
+  <a href="#">
+    <div class="top">
+      <div class="triangle-up"></div>
+    </div>
+  </a>
+
+  <footer>
+    <div class="grid-container">
+      <div>
+        <div>營業時間 :</div>
+        <div>09:00 - 18:00(星期一至五)</div>
+        <div>09:00 - 13:00(星期六、日及公眾假期)</div>
+        <br>
+        <div>華懋廣場 尖沙咀麼地道77號 UG2 208室</div>
+      </div>
+
+      <div>
+        <div>Tel :</div>
+        <div>+852 12345678</div>
+        <br>
+        <div>Email: <a href="mailto:tenpeopletenwood@gmail.com">tenpeopletenwood@gmail.com</a></div>
+      </div>
+
+      <div>
+        <div><a href="product.html" target="_blank">商品</a></div>
+        <div><a href="about.html" target="_blank">關於我們</a></div>
+        <div><a href="contact.html" target="_blank">聯絡我們</a></div>
+        <div><a href="#">退款政策</a></div>
+        <div><a href="#">加入我們</a></div>
+      </div>
+      <div>
+        <div>
+          <a href="https://www.instagram.com/" target="_blank"><img src="image/instagram.png"></a>
+          <a href="https://www.facebook.com/" target="_blank"><img src="image/facebook.webp"></a>
+          <a href="https://www.youtube.com/" target="_blank"><img src="image/youtube.png"></a>
+        </div>
+        <br>
+        <div>
+          <img src="image/visa.png"></a>
+          <img src="image/mastercard.png"></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="copyright">Copyright &copy 2023 十人十木 All Rights Reserved.</div>
+    <div class="privacy">條款及細則 | 私隱聱明</div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="js/style.js"></script>
+  <script src="js/navigation_bar.js"></script>
+  <script src="js/login.js"></script>
+  <script type="text/javascript">
+    //bounce up animation
+    var $animation_element = $('.animation-element');
+    var $window = $(window);
+
+    function check_if_in_view() {
+
+      var window_height = $window.height();
+      var window_top_position = $window.scrollTop();
+      var window_bottom_position = (window_height + window_top_position);
+
+      $.each($animation_element, function () {
+        var $element = $(this);
+        var element_height = $element.outerHeight();
+        var element_top_position = $element.offset().top;
+        var element_bottom_position = (element_height + element_top_position);
+
+        if ((element_bottom_position >= window_top_position) &&
+          (element_top_position <= window_bottom_position)) {
+          $element.addClass('in-view');
+        } else {
+          $element.removeClass('in-view');
+        }
+      });
+    };
+
+    $window.on('scroll resize', check_if_in_view);
+    $window.trigger('scroll');
+
+    var x = document.getElementById("test1");
+    var x2 = document.getElementById("test2");
+    var x3 = document.getElementById("test3");
+    var x4 = document.getElementById("test4");
+    var x5 = document.getElementById("test5");
+    var x6 = document.getElementById("test6");
+    var x7 = document.getElementById("test7");
+    var x8 = document.getElementById("test8");
+    var x9 = document.getElementById("test9");
+    var x10 = document.getElementById("test10");
+    var x11 = document.getElementById("test11");
+    var x12 = document.getElementById("test12");
+    x2.style.display = "none";
+    x3.style.display = "none";
+    x4.style.display = "none";
+    x6.style.display = "none";
+    x7.style.display = "none";
+    x8.style.display = "none";
+    x10.style.display = "none";
+    x11.style.display = "none";
+    x12.style.display = "none";
+
+    function myFunction() {
+      x.style.display = "block";
+      x5.style.display = "block";
+      x9.style.display = "block";
+      x2.style.display = "none";
+      x3.style.display = "none";
+      x4.style.display = "none";
+      x6.style.display = "none";
+      x7.style.display = "none";
+      x8.style.display = "none";
+      x10.style.display = "none";
+      x11.style.display = "none";
+      x12.style.display = "none";
+    }
+
+    function myFunction2() {
+      x2.style.display = "block";
+      x6.style.display = "block";
+      x10.style.display = "block";
+      x.style.display = "none";
+      x3.style.display = "none";
+      x4.style.display = "none";
+      x5.style.display = "none";
+      x7.style.display = "none";
+      x8.style.display = "none";
+      x9.style.display = "none";
+      x11.style.display = "none";
+      x12.style.display = "none";
+    }
+
+    function myFunction3() {
+      x3.style.display = "block";
+      x7.style.display = "block";
+      x11.style.display = "block";
+      x.style.display = "none";
+      x2.style.display = "none";
+      x4.style.display = "none";
+      x5.style.display = "none";
+      x6.style.display = "none";
+      x8.style.display = "none";
+      x9.style.display = "none";
+      x10.style.display = "none";
+      x12.style.display = "none";
+    }
+
+    function myFunction4() {
+      x4.style.display = "block";
+      x8.style.display = "block";
+      x12.style.display = "block";
+      x.style.display = "none";
+      x2.style.display = "none";
+      x3.style.display = "none";
+      x5.style.display = "none";
+      x6.style.display = "none";
+      x7.style.display = "none";
+      x9.style.display = "none";
+      x10.style.display = "none";
+      x11.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

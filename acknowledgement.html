@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>十人十木 - 付款完成</title>
+	<link rel="icon" type="image/x-icon" href="image/logo4.png">
+	<style>
+		/* Center the loader */
+		#loader {
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  z-index: 1;
+		  width: 120px;
+		  height: 120px;
+		  margin: -76px 0 0 -76px;
+		  border: 16px solid #f3f3f3;
+		  border-radius: 50%;
+		  border-top: 16px solid #3498db;
+		  -webkit-animation: spin 2s linear infinite;
+		  animation: spin 2s linear infinite;
+		}
+
+		@-webkit-keyframes spin {
+		  0% { -webkit-transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+		  0% { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); }
+		}
+
+		/* Add animation to "page content" */
+		.animate-bottom {
+		  position: relative;
+		  -webkit-animation-name: animatebottom;
+		  -webkit-animation-duration: 1s;
+		  animation-name: animatebottom;
+		  animation-duration: 1s
+		}
+
+		@-webkit-keyframes animatebottom {
+		  from { bottom:-100px; opacity:0 } 
+		  to { bottom:0px; opacity:1 }
+		}
+
+		@keyframes animatebottom { 
+		  from{ bottom:-100px; opacity:0 } 
+		  to{ bottom:0; opacity:1 }
+		}
+
+		#myDiv {
+		  display: none;
+		  text-align: center;
+		}
+
+		.acknowledgement {
+			width: 80%;
+			height: 40%;
+			background-color: #ccc;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+		}
+	</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+	<div id="loader"></div>
+
+	<div class="acknowledgement animate-bottom" id="myDiv" style="display:none;">
+		<div>感謝您的訂購!</div>
+		<br>
+		<div>感謝你於 <b>十人十木</b> 購物!</div>
+		<br>
+		<div>您的訂單號碼是 <b>202305310001</b> (已於 <span id="date"></span> 完成) ，您將會收到訂單確認電郵。您亦可點擊 <a href="#">這裡</a> 查看您的訂單狀態。</div>
+		<br>
+		<div>***請注意，您的電郵地址已經自動成為會員。請查看您的確認電郵，透過指定的超連結登入並重設密碼。</div>
+		<div>如有任何查詢，請透過 <a href="https://wa.me/85212345678?text=我哋喺十人十木，請問有咩可以幫到你？" target="_blank">whatsapp</a> 或電郵 <a href="mailto:cstenpeopletenwood@gmail.com">cstenpeopletenwood@gmail.com</a> ，與我們聯絡。</div>
+		<br>
+		<a href="product.html"><button>繼續購物</button></a>
+	</div>
+
+	<script type="text/javascript">
+		var myVar;
+
+		function myFunction() {
+		  myVar = setTimeout(showPage, 3000);
+		}
+
+		function showPage() {
+		  document.getElementById("loader").style.display = "none";
+		  document.getElementById("myDiv").style.display = "block";
+		}
+
+		document.getElementById('date').innerHTML = Date()
+	</script>
+</body>
+</html>

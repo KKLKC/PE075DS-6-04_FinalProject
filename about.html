@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="十人十木, 茶, tea">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>十人十木 - 關於我們</title>
+    <link rel="icon" type="image/x-icon" href="image/logo4.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/navigation_bar.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+
+        html,
+        body,
+        section {
+            block-size: 100%;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slogan2 {
+            display: flex;
+            justify-content: right;
+            position: relative;
+            user-select: none;
+        }
+
+        .slogan3 {
+            font-size: 800%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .ten {
+            position: relative;
+            animation: ten-animation 5s infinite alternate;
+        }
+
+        @keyframes ten-animation {
+            0% {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            10% {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            30% {
+                left: 0px;
+                bottom: 90px;
+            }
+
+            60% {
+                left: 180px;
+                bottom: 90px;
+            }
+
+            100% {
+                color: darkolivegreen;
+                left: 180px;
+                bottom: 90px;
+            }
+        }
+
+        .ten2 {
+            position: relative;
+            animation: ten2-animation 5s infinite alternate;
+        }
+
+        @keyframes ten2-animation {
+            0% {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            10% {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            60% {
+                left: 0px;
+                bottom: 90px;
+            }
+
+            100% {
+                color: darkolivegreen;
+                left: 0px;
+                bottom: 90px;
+            }
+        }
+
+        .people {
+            position: relative;
+            animation: people-animation 5s infinite alternate;
+        }
+
+        @keyframes people-animation {
+            0% {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            10% {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            60% {
+                left: 80px;
+                bottom: 0px;
+            }
+
+            100% {
+                Left: 80px;
+                bottom: 0px;
+            }
+        }
+
+        .wood {
+            position: relative;
+            animation: wood-animation 5s infinite alternate;
+        }
+
+        @keyframes wood-animation {
+            0% {
+                right: 0px;
+                top: 0px;
+            }
+
+            10% {
+                right: 0px;
+                top: 0px;
+            }
+
+            30% {
+                right: 0px;
+                top: 140px;
+                font-size: 100%
+            }
+
+            60% {
+                right: 330px;
+                top: 140px;
+                font-size: 170%
+            }
+
+            100% {
+                color: saddlebrown;
+                right: 330px;
+                top: 140px;
+                font-size: 170%
+            }
+        }
+
+        .about {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 900px;
+            margin-top: 60px;
+            height: 700px;
+        }
+
+        .about2 {
+            display: grid;
+            grid-template-columns: 30% 60%;
+            justify-content: space-around;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        .about3 {
+            display: grid;
+            grid-template-columns: 60% 30%;
+            justify-content: space-around;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .slogan3 {
+                font-size: 500%;
+            }
+
+            @keyframes ten-animation {
+                0% {
+                    left: 0px;
+                    bottom: 0px;
+                }
+
+                10% {
+                    left: 0px;
+                    bottom: 0px;
+                }
+
+                30% {
+                    left: 0px;
+                    bottom: 60px;
+                }
+
+                60% {
+                    left: 50px;
+                    bottom: 60px;
+                }
+
+                100% {
+                    color: darkolivegreen;
+                    left: 50px;
+                    bottom: 60px;
+                }
+            }
+
+            @keyframes ten2-animation {
+                0% {
+                    right: 0px;
+                    bottom: 0px;
+                }
+
+                10% {
+                    right: 0px;
+                    bottom: 0px;
+                }
+
+                30% {
+                    right: 0px;
+                    bottom: 60px;
+                }
+
+                60% {
+                    right: 50px;
+                    bottom: 60px;
+                }
+
+                100% {
+                    color: darkolivegreen;
+                    right: 50px;
+                    bottom: 60px;
+                }
+            }
+
+            @keyframes people-animation {
+                0% {
+                    left: 0px;
+                    bottom: 0px;
+                }
+
+                10% {
+                    left: 0px;
+                    bottom: 0px;
+                }
+
+                60% {
+                    left: 0px;
+                    bottom: 0px;
+                }
+
+                100% {
+                    Left: 0px;
+                    bottom: 0px;
+                }
+            }
+
+            @keyframes wood-animation {
+                0% {
+                    right: 0px;
+                    top: 0px;
+                }
+
+                10% {
+                    right: 0px;
+                    top: 0px;
+                }
+
+                30% {
+                    right: 0px;
+                    top: 90px;
+                    font-size: 100%
+                }
+
+                60% {
+                    right: 245px;
+                    top: 90px;
+                    font-size: 150%
+                }
+
+                100% {
+                    color: saddlebrown;
+                    right: 245px;
+                    top: 90px;
+                    font-size: 150%
+                }
+            }
+
+            .about2 {
+                display: grid;
+                grid-template-columns: 100%;
+                justify-content: space-around;
+                padding: 10px;
+                border: 1px solid black;
+                margin: 10px;
+                background-image: url(image/slide.jpg);
+                background-position: center;
+                height: 200px;
+                font-size: 22px;
+            }
+
+            .about3 {
+                display: grid;
+                grid-template-columns: 100%;
+                justify-content: space-around;
+                padding: 10px;
+                border: 1px solid black;
+                margin: 10px;
+                background-image: url(image/green_tea2.jpg);
+                background-position: center left;
+                height: 200px;
+                font-size: 22px;
+            }
+
+            .about4 {
+                display: grid;
+                grid-template-columns: 100%;
+                justify-content: space-around;
+                padding: 10px;
+                border: 1px solid black;
+                margin: 10px;
+                background-image: url(image/flowering_tea2.jpg);
+                background-position: center left;
+                height: 200px;
+                font-size: 22px;
+            }
+
+            .about5 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--navigation bar-->
+    <nav class="nav">
+        <div class="logo">
+            <a href="index.html"><img src="image/logo.png"></a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li>
+                    <div class="dropdown">
+                        <a href="product.html">商品 <div class="triangle-down"></div></a>
+                        <div class="dropdown-content">
+                            <a href="product.html#red-tea">紅茶</a>
+                            <a href="product.html#green-tea">綠茶</a>
+                            <a href="product.html#oolong-tea">烏龍茶</a>
+                            <a href="product.html#flowering-tea">花茶</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="underline"><a href="#">關於我們</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+                <li>
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img
+                            src="image/login_icon.png"> 建立帳戶</button>
+
+                    <div id="id01" class="modal">
+
+                        <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="image/logo4.png" class="avatar">
+                            </div>
+
+                            <div>建立帳戶</div><br>
+                            <div>請輸入以下資料</div>
+                            <hr>
+                            <label for="email"><b>用戶名稱</b></label><br>
+                            <input type="text" placeholder="你可以使用中英文字母和數字" name="email" required><br>
+
+                            <label for="psw"><b>密碼</b></label><br>
+                            <input type="password" placeholder="請混合使用 8 個字元以上的英文字母、數字和符號" name="psw" required><br>
+
+                            <label for="psw-repeat"><b>重覆密碼</b></label><br>
+                            <input type="password" placeholder="重覆密碼" name="psw-repeat" required><br>
+
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember">保持登入
+                            </label><br><br>
+
+                            <div>按一下「繼續」即表示你同意<a href="#" style="color:dodgerblue">服務條款</a>並確認<a href="#"
+                                    style="color:dodgerblue">私隱政策</a>.</div>
+
+                            <button type="submit">繼續</button><br><br>
+
+                            <div class="forgot" ;>
+                                <div class="psw">已擁有帳戶?<a href="#" style="color:dodgerblue">登入</a></div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img
+                            src="image/login_icon2.png" style="width: 20px;"> 登入</button>
+
+                    <div id="id02" class="modal">
+
+                        <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="image/logo4.png" class="avatar">
+                            </div>
+                            <div>登入</div>
+                            <hr>
+
+                            <label for="uname"><b>用戶名稱</b></label><br>
+                            <input type="text" placeholder="輸入用戶名稱" name="uname" required><br>
+
+                            <label for="psw"><b>密碼</b></label><br>
+                            <input type="password" placeholder="輸入密碼" name="psw" required><br>
+
+
+                            <input type="checkbox" checked="checked" name="remember"><label
+                                for="remember">保持登入</label><br><br>
+
+                            <button type="submit">登入</button><br><br>
+
+                            <div class="forgot">
+                                <div class="psw"><a href="#" style="color:dodgerblue">忘記用戶名稱？</a></div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">購物車 <img
+                            src="image/shopping_bag_icon.png"><span class="total-count"></span></button>
+                </li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+    </nav>
+
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg animate" role="document">
+            <div class="modal-content modal-content1">
+                <div class="modal-header">
+                    <div class="modal-title" id="exampleModalLabel">商品清單</div>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table"></table>
+                    <div>總共金額: $<span class="total-cart"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="clear-cart btn btn-danger">清空</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                    <a href="reciept.html"><button type="button" class="btn btn-primary">前往付款</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section
+        style="background-image: url(image/about.gif); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <div class="slogan3">關於我們</div>
+    </section>
+    <section
+        style="background-image: url(image/about2.gif); background-repeat: no-repeat; background-size: cover; background-position: top;">
+        <div class="slogan3">一茶一會</div>
+    </section>
+    <section
+        style="background-image: url(image/about3.gif); background-repeat: no-repeat; background-size: cover; background-position: right;">
+        <div class="slogan3">
+            <div class="slogan2">
+                <div class="ten">十</div>
+                <div class="people">人</div>
+                <div class="ten2">十</div>
+                <div class="wood">木</div>
+            </div>
+        </div>
+    </section>
+    <section style="background-image: url(image/about4.gif); background-repeat: no-repeat; background-size: cover;">
+        <div class="about">
+            <div class="about2">
+                <div><img src="image/slide.jpg" class="about5" style="width:100%;height:190px;"></div>
+                <div>
+                    很高興為您介紹我們的賣茶網站 - 「十人十木」。我們是一家專注於提供高品質茶葉的網上商店，將世界各地最優質的茶葉帶到您的家門口。
+
+                    在「十人十木」，我們提供各種口味的茶葉，包括綠茶、紅茶、烏龍茶、白茶、花茶、草本茶等多種類型，滿足您不同口味的需求。我們的茶葉來自於世界各地的優質茶園，採用最優質的原料，精心烘焙而成，保證味道鮮美、香氣濃郁。
+                </div>
+            </div>
+            <div class="about3">
+                <div>
+                    在「十人十木」的賣茶網站上，您可以輕鬆地選擇您喜愛的茶葉。我們提供了詳細的茶葉介紹，包括茶葉種類、產地、烘焙程度、味道特色等等，讓您可以更好地了解每一款茶葉的特點和適合搭配的食品或茶具。此外，我們還提供了茶葉試飲套裝，讓您可以在家中品嚐不同種類的茶葉，找到最適合自己的口味。
+                </div>
+                <div><img src="image/green_tea2.jpg" class="about5" style="width:100%;height:190px;"></div>
+            </div>
+            <div class="about2 about4">
+                <div><img src="image/flowering_tea2.jpg" class="about5" style="width:100%;height:190px;"></div>
+                <div>
+                    除了茶葉本身，我們還提供了各種茶具和茶葉配件等商品，讓您可以完整地享受一杯好茶的樂趣。我們的茶具精美而實用，包括茶壺、茶杯、茶匙等，為您的品茶體驗增添一份雅致。同時，我們還提供了茶葉篩、茶葉罐等茶葉配件，讓您可以儲存和保存您的茶葉。
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <a href="https://wa.me/85212345678?text=我哋喺十人十木，請問有咩可以幫到你？" target="_blank"><img src="image/whatsapp.webp"
+            class="whatsapp"></a>
+    <a href="#">
+        <div class="top">
+            <div class="triangle-up"></div>
+        </div>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/navigation_bar.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

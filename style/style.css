@@ -1,0 +1,176 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+
+html, body {
+  font-family: "cwTeXYen", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight: bold;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 16px;
+  color: #fff;
+  background-color: saddlebrown;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: translateY(5px);
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  justify-content: space-around;
+}
+
+.box img {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -1px;
+  margin-bottom: 20px;
+}
+
+footer {
+  height: 250px;
+  margin-top: 100px;
+  background-color: darkolivegreen;
+  text-align: left;
+  position: relative;
+  padding-top: 50px;
+  font-size: 16px;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 14px;
+}
+
+footer div {
+  margin: 5px 0;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.privacy {
+  position: absolute;
+  bottom: 0;
+  left: 7.5%;
+  transform: translate(-50%, -50%);
+}
+
+
+.top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: saddlebrown;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top2 {
+  visibility: visible;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  display: none;
+  z-index: 1;
+}
+
+.whatsapp2 {
+  display: block;
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid white;
+}
+
+.delete-item {
+  background-color: red;
+  margin-left: 10px;
+}
+
+table button {
+  padding: 2px 4px;
+}
+
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 40% 40%;
+  }
+
+  footer{
+    height: 400px;
+  }
+
+  .copyright {
+    left: 70%;
+  }
+
+  .privacy{
+    left: 13%;
+    bottom: 7%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 60%;
+  }
+
+  footer{
+    height: 600px;
+  }
+
+  footer img {
+    margin: 0 20px 0 0;
+  }
+
+  .copyright {
+    bottom: -4%;
+  }
+
+  .privacy {
+    bottom: -1%;
+    left: 20%;
+  }
+}

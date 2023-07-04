@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>十人十木 - 收據</title>
+	<link rel="icon" type="image/x-icon" href="image/logo4.png">
+	<style>
+		body {
+			background-color: #ccc;
+		}
+
+		input[type=text]:hover, input[type=email]:hover, input[type=submit]:hover, textarea:hover { 
+			background-color: #fff;
+		}
+
+		fieldset {
+			width: 600px;
+			margin: auto;
+			background-color: #fff;
+			box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+		}
+
+		legend {
+  		text-align: center;
+		}
+
+		textarea {
+			height: 30px;
+		}
+
+		input[type=submit] {
+			width:350px;
+			border-radius: 5px;
+			background-color: #ccc;
+			transition: width 0.7s ease-in-out;
+			padding: 8px 16px;
+		}
+
+		input[type=text], input[type=email], textarea {
+			width: 350px;
+			border-radius: 5px;
+			transition: width 0.7s ease-in-out;
+			background-color: #ccc;
+			padding: 10px;
+		}
+
+		input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  			width: 90%;
+  			background-color: #fff;
+		}
+
+		@media screen and (max-width: 992px) {
+  			input[type=text], input[type=email], input[type=submit], textarea {
+				width: 60%;
+ 			 }
+  			fieldset {
+				width: 90%;
+ 			 }
+ 		}
+ 		
+
+
+	</style>
+</head>
+<body>
+	<form action="payment.html" method="post">
+	<fieldset>
+	    <legend><strong>送貨資料</strong></legend><br>
+	    <label for="name">1. 收貨人姓名 *</label>
+	    <br>
+	    <input type="text" id="name" name="name" placeholder="收貨人姓名" required>
+	    <br><br>
+	    <label for="lname">2. 聯絡人電話 *</label>
+	    <br>
+	    <input type="text" id="tel" name="tel" placeholder="聯絡人電話" required>
+	    <br><br>
+	    <label for="lname">3. 電郵地址 *</label>
+	    <br>
+	    <input type="email" id="email" name="email" placeholder="電郵地址" required>
+	    <br><br>
+
+	    <label for="flat">4. 單位 / 樓層 / 座數 *</label>
+	    <br>
+	    <input type="text" id="flat" name="flat" placeholder="單位 / 樓層 / 座數" required>
+	    <br><br>
+	    <label for="street">5. 大廈名稱 / 街道 *</label>
+	    <br>
+	    <input type="text" id="street" name="street" placeholder="大廈名稱 / 街道" required>
+	    <br><br>
+	    <label for="district">6. 分區 *</label>
+	    <br>
+	    <input type="text" id="district" name="district" placeholder="分區" required>
+	    <br><br>
+		<label for="region">7. 選擇區域 *</label>
+		<br>
+		<select name="region" id="region">
+			<option value="-">-</option>
+			<option value="HK">香港</option>
+			<option value="KL">九龍</option>
+			<option value="NT">新界</option>
+		</select>
+	    <br><br>
+		<label for="time">8. 送貨日期 *</label>
+		<br>
+		<input type="date" id="time" name="time" min="2023-06-02" required>
+		<br><br>
+	    <label for="reason">9. 跟送貨員留言</label>
+	    <br>
+	    <textarea name="message" id="message" placeholder="跟送貨員留言"></textarea>
+	    <br><br>
+	    <input type="submit" value="確認付款">
+	    <br>
+	    <span>請備妥你的 Visa / Master 信用卡，於下頁輸入資料。論注意，按 「確認付款」 進入付款頁面後，你的交易便不能取消。</span>
+	    <p><b>* 必須填寫</b></p>
+	    <span id="date"></span>
+	</fieldset>
+	</form>
+	<script type="text/javascript">
+		document.getElementById('date').innerHTML = Date()
+	</script>
+</body>
+</html>
